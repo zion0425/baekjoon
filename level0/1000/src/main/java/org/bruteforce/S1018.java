@@ -10,7 +10,6 @@ public class S1018 {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-
         int rows = Integer.parseInt(st.nextToken());
         int cols = Integer.parseInt(st.nextToken());
 
