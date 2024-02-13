@@ -31,37 +31,27 @@ public class Main {
 		changeSwitch(clickOneSwitch, 0);
 		result2++;
 
-			
-		for (int t = 0; t < 2; t++) {
-			
-			for (int i = 1; i < n; i++) {
-				
-				if (switches[i - 1] != targetSwithces[i - 1]) {
-					changeSwitch(switches, i);
-					result1++;
-				}
+		for (int i = 1; i < n; i++) {
+			if (switches[i - 1] != targetSwithces[i - 1]) {
+				changeSwitch(switches, i);
+				result1++;
 			}
-	
-			for (int i = 1; i < n; i++) {
-				
-				if (clickOneSwitch[i - 1] != targetSwithces[i - 1]) {
-					changeSwitch(clickOneSwitch, i);
-					result2++;
-				}
+			if (clickOneSwitch[i - 1] != targetSwithces[i - 1]) {
+				changeSwitch(clickOneSwitch, i);
+				result2++;
 			}
-			
 		}
+
 		if (Arrays.equals(targetSwithces, switches) && Arrays.equals(targetSwithces, clickOneSwitch)) {
-			bw.write(Math.min(result1,result2) + "");	
+			bw.write(Math.min(result1, result2) + "");
 		} else if (Arrays.equals(targetSwithces, switches)) {
-			bw.write(result1 + "");	
+			bw.write(result1 + "");
 		} else if (Arrays.equals(targetSwithces, clickOneSwitch)) {
 			bw.write(result2 + "");
 		} else {
 			bw.write(-1 + "");
 		}
-			
-		
+
 		bw.flush();
 	}
 
