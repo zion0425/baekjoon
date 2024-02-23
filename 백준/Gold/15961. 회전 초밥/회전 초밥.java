@@ -31,7 +31,7 @@ public class Main {
             }
         }
 
-        int max = (eatFoodType[c] == 0 ? diffFoodCnt + 1 : diffFoodCnt);
+        int max = 0;
         for (int i = k; i < n + k; i++) {
             // 먹은 음식 중에 보너스 음식이 없다면(테이블에 보너스 음식이 없어도 주방장이 갖다 놓으니까) 추가로 먹을 수 있으므로 무조건 +1)
             max = Math.max((eatFoodType[c] == 0) ? diffFoodCnt + 1 : diffFoodCnt, max);
