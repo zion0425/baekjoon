@@ -108,17 +108,18 @@ public class Solution {
 		return breakCount;
 	}
 	
-	public static void moveMap(int map[][]) { 
-		for (int i = H - 1; i >= 1; i--) {
-			for (int j = 0; j < W; j++) {
-				if (map[i][j] == 0) {
-					int k = i;
-					for (; k > 0 && map[k][j] == 0; k--);
-					map[i][j] = map[k][j];
-					map[k][j] = 0;
-				}
-			}
-		}
+	public static void moveMap(int G[][]) { 
+        for (int j = 0; j < W; j++) {
+            int cnt = 0;
+            for (int i = H - 1; i >= 0; i--) {
+                if (G[i][j] == 0) {
+                    cnt += 1;
+                } else if (cnt > 0) {
+                    G[i + cnt][j] = G[i][j];
+                    G[i][j] = 0;
+                }
+            }
+        }
 
 
 	}
